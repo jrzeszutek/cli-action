@@ -1,0 +1,18 @@
+name: Cloudify CLI
+author: Isaac Shabtay
+description: Runs a generic Cloudify CLI command.
+branding:
+  icon: cloud
+  color: white
+inputs:
+  command:
+    description: Command to run
+    required: true
+runs:
+  using: docker
+  image: docker://cloudifyplatform/cloudify-cli:5.0.5.1
+  entrypoint: cfyci
+  args:
+    - cli
+    - '--command'
+    - ${{ inputs.command }}
