@@ -10,6 +10,7 @@ Cloudify documentation (see [More Information](#more-information) below).
 | Name | Description
 |------|------------
 | `command` | The CLI command to run.
+| `set-output` | If set to `true`, then a GitHub output called `cli-output` is set with the CLI command's `stdout` contents.
 
 ## Notes
 

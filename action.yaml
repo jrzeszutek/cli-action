@@ -8,6 +8,13 @@ inputs:
   command:
     description: Command to run
     required: true
+  set-output:
+    description: |
+      Whether the CLI command's output should be stored as an
+      Action output. If `true`, then the CLI command's output will not be
+      echoed to the console.
+    required: true
+    default: "true"
 runs:
   using: docker
   image: docker://cloudifyplatform/cloudify-cli:5.0.5.1
@@ -16,3 +23,5 @@ runs:
     - cli
     - '--command'
     - ${{ inputs.command }}
+    - '--set-output'
+    - ${{ inputs.set-output }}
